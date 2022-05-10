@@ -5,14 +5,16 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Outerwear' },
+    { name: 'Pants' },
+    { name: 'Tops' },
+    { name: 'Accessories' },
+    { name: 'Swimwear' },
+    { name: 'Dresses' },
+    { name: 'Dresses' }
   ]);
 
-  console.log('categories seeded');
+  console.log('Categories Seeded');
 
   await Product.deleteMany();
 
@@ -126,15 +128,15 @@ db.once('open', async () => {
     }
   ]);
 
-  console.log('products seeded');
+  console.log('Products Seeded');
 
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
+    firstName: 'Adele',
+    lastName: 'Maxwell',
+    email: 'armaxwell13@gmail.com',
+    password: 'password123456',
     orders: [
       {
         products: [products[0]._id, products[0]._id, products[1]._id]
@@ -143,13 +145,13 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    firstName: 'Emma',
+    lastName: 'Graham',
+    email: 'egraham@hotmail.com',
+    password: 'password123456'
   });
 
-  console.log('users seeded');
+  console.log('Users Seeded');
 
   process.exit();
 });

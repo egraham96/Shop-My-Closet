@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Judson');
+
+
 :root {
   --primary: #232F3E;
   --secondary: #F3A847;
@@ -80,7 +83,7 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background-color: #674b7c;
 }
 
 header a {
@@ -134,17 +137,37 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
+.categorynav h2 {
+  font-family: 'Judson', serif;
+  font-weight: bold;
+}
+
+.categorynav button {
+  font-size:26px;
+  Font-family: 'Judson', serif;
+  color:white;
+  background-color:#f47362;
+}
+
 .container {
+  font-family: 'Judson', serif;
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
+.container button {
+  background-color:#f47362;
+  font-family: 'Judson', serif;
+  font-size:26px;
+  color:white;
 }
+
+#back{
+font-size:30px;
+color:#674b7c}
+
 
 .space-between {
   justify-content: space-between;
@@ -154,15 +177,30 @@ input:focus {
   justify-content: flex-end;
 }
 
-.mx-1 {
-  margin-right: var(--spacing-one);
-  margin-left: var(--spacing-one);
+.mainheader {
+  display: flex;
+  align-items: center;
 }
 
-.mx-2 {
-  margin-right: var(--spacing-two);
-  margin-left: var(--spacing-two);
+
+.navbarUl {
+  margin-left: 1400px;
+  display: inline;
 }
+
+.navbar {
+  margin-right: 40px;
+  display: inline;
+  font-family: 'Judson';
+  color: #f47362;
+  font-size: 40px;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 .my-1 {
   margin-top: var(--spacing-one);
@@ -172,6 +210,11 @@ input:focus {
 .my-2 {
   margin-top: var(--spacing-two);
   margin-bottom: var(--spacing-two);
+}
+
+.my-2 h2 {
+  font-family: 'Judson', serif;
+  font-weight: bold;
 }
 
 .px-1 {
@@ -197,6 +240,16 @@ input:focus {
 .card {
   width: 25%;
   text-align: center;
+}
+
+.card p {font-size:30px;
+color:#674b7c}
+
+.cardbutton {
+  font-family:'Judson', serif;
+  font-size:20px;
+  color:white;
+  background-color:#f47362
 }
 
 .error-text {
