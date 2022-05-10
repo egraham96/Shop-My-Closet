@@ -1,1 +1,1 @@
-# ShopMyCloset
+# Shop-My-Closet
