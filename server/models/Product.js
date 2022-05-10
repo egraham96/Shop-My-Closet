@@ -28,7 +28,25 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
-  }
+  },
+reviews: [
+  {
+    reviewText: {
+      type: String,
+      required: true,
+      minlength: 1,
+    },
+    reviewAuthor: {
+      type: String,
+      required: true,
+    },
+    reviewDate: {
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
+    },
+  },
+],
 });
 
 const Product = mongoose.model('Product', productSchema);

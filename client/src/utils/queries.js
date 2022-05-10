@@ -11,10 +11,15 @@ export const QUERY_PRODUCTS = gql`
       image
       category {
         _id
+      }reviews {
+          _id
+          reviewText
+          reviewAuthor
+          createdAt
+        }
       }
     }
-  }
-`;
+  `;
 
 export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ID]!) {
@@ -34,6 +39,12 @@ export const QUERY_ALL_PRODUCTS = gql`
       quantity
       category {
         name
+      }
+      reviews {
+        _id
+        reviewText
+        reviewAuthor
+        createdAt
       }
     }
   }
