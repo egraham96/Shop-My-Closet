@@ -45,11 +45,10 @@ function Nav() {
   }
 
   return (
-    <header  className="mainheader">
-      
+    <header className="mainheader">
         <div>
         <Link to="/">
-          <img src="images/mainlogo.png" alt="Shop My Closet Logo"/>
+          <img src="/images/mainlogo.png" alt="Shop My Closet Logo"/>
         </Link>
         </div>
 

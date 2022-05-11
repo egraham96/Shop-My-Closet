@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Review, Product, Category, Order } = require('../models');
+const { User, Comment, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -136,38 +136,38 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-  },
-  addReview: async (parent, {productId, reviewText}, context) =>{
-    return Product.findOneAndUpdate(
-      { _id: productId },
-      {
-        $addToSet: {
-          reviews: { reviewText, reviewAuthor: context.user.firstName },
-        },
-      },
-      {
-        new: true,
-        runValidators: true,
-      }
-    );
-  },
-  deleteReview: async (parent, {productId, reviewId}, context) => {
-    if (context.user) {
+    },
+    addComment: async (parent, { productId, commentText }, context) => {
       return Product.findOneAndUpdate(
         { _id: productId },
         {
-          $pull: {
-            reviews: {
-              _id: reviewId,
-              commentAuthor: context.user.firstName,
-            },
+          $addToSet: {
+            comments: { commentText, commentAuthor: context.user.firstName },
           },
         },
-          { new: true }
-          );
+        {
+          new: true,
+          runValidators: true,
         }
+      );
+    },
+    deleteComment: async (parent, { productId, commentId }, context) => {
+      if (context.user) {
+        return Product.findOneAndUpdate(
+          { _id: productId },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+                commentAuthor: context.user.firstName,
+              },
+            },
+          },
+          { new: true }
+        );
       }
     }
-  }      
+  }
+}
 
 module.exports = resolvers;

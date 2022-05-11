@@ -47,8 +47,8 @@ function ProductList() {
     <div className="my-2">
       <br></br>
       <h2>Our Products:</h2>
-      <h3> Click on each donut for more information and to purchase. </h3> 
-      <p> You <b>must</b> be logged in to read or write products reviews or to purchase. </p>
+      <h3> Click on each donut for more information and to purchase. </h3>
+      <p> You <b>must</b> be logged in to read or write products comments or to purchase. </p>
       <p>Thank you for shopping with us!</p>
       <br></br>
       {state.products.length ? (

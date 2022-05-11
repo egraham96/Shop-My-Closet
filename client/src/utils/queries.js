@@ -11,10 +11,10 @@ export const QUERY_PRODUCTS = gql`
       image
       category {
         _id
-      }reviews {
+      }comments {
           _id
-          reviewText
-          reviewAuthor
+          commentText
+          commentAuthor
           createdAt
         }
       }
@@ -40,10 +40,10 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
       }
-      reviews {
+      comments {
         _id
-        reviewText
-        reviewAuthor
+        commentText
+        commentAuthor
         createdAt
       }
     }

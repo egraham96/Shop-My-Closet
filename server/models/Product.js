@@ -29,24 +29,24 @@ const productSchema = new Schema({
     ref: 'Category',
     required: true
   },
-reviews: [
-  {
-    reviewText: {
-      type: String,
-      required: true,
-      minlength: 1,
+  comments: [
+    {
+      commentText: {
+        type: String,
+        required: true,
+        minlength: 1,
+      },
+      commentAuthor: {
+        type: String,
+        required: true,
+      },
+      commentDate: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
     },
-    reviewAuthor: {
-      type: String,
-      required: true,
-    },
-    reviewDate: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
-  },
-],
+  ],
 });
 
 const Product = mongoose.model('Product', productSchema);

@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Cart from '../components/Cart';
-import ReviewList from '../components/ReviewList';
-import ReviewForm from '../components/ReviewForm';
+import CommentList from '../components/commentList';
+import CommentForm from '../components/commentForm';
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -85,70 +85,70 @@ function Detail() {
 
   return (
     <>
-    <div className="container my-1">
-    {currentProduct && cart ? (
-        <div>
-          <Link to="/" className="mx-5">← Products</Link>
-          
-          <div className="columns">
-            <div className="column is-half is-offset-one-quarter">
-              <div className="buttons is-centered">
-                <button className="button is-primary"onClick={addToCart}>
-                  Add to Cart
-                </button>
-                <button className="button is-danger"
-                  disabled={!cart.find((p) => p._id === currentProduct._id)}
-                  onClick={removeFromCart}
-                >
-                  Remove from Cart
-                </button>
+      <div className="container my-1">
+        {currentProduct && cart ? (
+          <div>
+            <Link to="/" className="mx-5">← Products</Link>
+
+            <div className="columns">
+              <div className="column is-half is-offset-one-quarter">
+                <div className="buttons is-centered">
+                  <button className="button is-primary" onClick={addToCart}>
+                    Add to Cart
+                  </button>
+                  <button className="button is-danger"
+                    disabled={!cart.find((p) => p._id === currentProduct._id)}
+                    onClick={removeFromCart}
+                  >
+                    Remove from Cart
+                  </button>
+                </div>
+
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title is-size-4">
+                      {currentProduct.name}
+                    </p>
+                    <span>
+                      <p className="card-header-title is-size-4">
+                        $ {currentProduct.price}{' '}
+                      </p>
+                    </span>
+                  </header>
+
+                  <div className="card-content">
+                    <div className="content">
+                      <p>{currentProduct.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="card-image">
+                    <figure className="image is-256x256">
+                      <img
+                        alt={currentProduct.name}
+                        src={`/images/${currentProduct.image}`}
+                      />
+                    </figure>
+                  </div>
+                </div>
               </div>
+            </div>
 
-          <div className="card">
-            <header className="card-header">
-              <p className="card-header-title is-size-4">
-                {currentProduct.name}
-              </p>
-              <span>
-                <p className="card-header-title is-size-4">
-                  $ {currentProduct.price}{' '}
-                </p>
-              </span>
-            </header>
+            <CommentForm productId={currentProduct._id} />
 
-            <div className="card-content">
-              <div className="content">
-                <p>{currentProduct.description}</p>
+            <div className="columns">
+              <div className="column is-half is-offset-one-quarter has-text-weight-bold">
+                comments:
               </div>
             </div>
 
-            <div className="card-image">
-              <figure className="image is-256x256">
-                <img
-                  alt={currentProduct.name}
-                  src={`/images/${currentProduct.image}`}
-                />
-              </figure>
-            </div>
-            </div>
+            <CommentList comments={currentProduct.comments} />
+
           </div>
-        </div>
-          
-          <ReviewForm productId = {currentProduct._id}/>
 
-          <div className="columns">
-            <div className="column is-half is-offset-one-quarter has-text-weight-bold">
-              Reviews: 
-            </div>
-          </div>
-          
-          <ReviewList reviews = {currentProduct.reviews} />
-
-      </div>
-
-      ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
-      <Cart />
+        ) : null}
+        {loading ? <img src={spinner} alt="loading" /> : null}
+        <Cart />
       </div>
     </>
   );

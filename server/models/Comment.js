@@ -3,19 +3,19 @@ const dateFormat = require('../utils/dateFormat');
 const Product = require('./Product')
 
 
-const reviewSchema = new Schema({
-    reviewAuthor: {
+const commentSchema = new Schema({
+    commentAuthor: {
         type: String,
         required: true,
         trim: true,
     },
-    reviewText: {
+    commentText: {
         type: String,
         minlength: 1,
         maxlength: 2000,
         trim: true,
     },
-    reviewDate: {
+    commentDate: {
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
@@ -24,6 +24,6 @@ const reviewSchema = new Schema({
 
 
 
-const Review = model('Review', reviewSchema);
+const Comment = model('Comment', commentSchema);
 
-module.exports = Review;
+module.exports = Comment;

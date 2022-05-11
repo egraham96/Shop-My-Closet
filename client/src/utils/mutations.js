@@ -50,9 +50,9 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_REVIEW = gql`
-  mutation addReview($productId: ID!, $reviewText: String!){
-    addReview(productId: $productId, reviewText: $reviewText){
+export const ADD_COMMENT = gql`
+  mutation addComment($productId: ID!, $commentText: String!){
+    addComment(productId: $productId, commentText: $commentText){
       _id
       name
       description
@@ -61,9 +61,9 @@ export const ADD_REVIEW = gql`
       category {
         name
       }
-      reviews{
-        reviewAuthor
-        reviewText
+      comments{
+        commentAuthor
+        commentText
         createdAt
       }
     }
