@@ -28,7 +28,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--dark);
+  background-color:#674b7c;
 }
 
 h1,
@@ -73,7 +73,6 @@ p {
 }
 
 a {
-  color: var(--tertiary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -82,9 +81,7 @@ a:hover {
   text-decoration: underline;
 }
 
-header {
-  background-color: #674b7c;
-}
+
 
 header a {
   color: var(--light);
@@ -137,6 +134,17 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
+#productheader{
+border:2px solid #674b7c;
+background-color: white;
+margin:2px;
+}
+
+.categorynav{
+  border:2px solid #674b7c;
+  margin: 2px solid;
+  background-color:white;
+}
 .categorynav h2 {
   font-family: 'Judson', serif;
   font-weight: bold;
@@ -150,6 +158,8 @@ input:focus {
 }
 
 .container {
+  background-color: #f47362;
+  border:5px solid #f47362;
   font-family: 'Judson', serif;
   width: 85%;
   max-width: 1200px;
@@ -164,42 +174,92 @@ input:focus {
   color:white;
 }
 
-#back{
-font-size:30px;
-color:#674b7c}
-
-
-.space-between {
-  justify-content: space-between;
+.productdiv {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border:2px solid #674b7c;
+  margin: 2px solid;
 }
 
-.flex-end {
-  justify-content: flex-end;
+
+.back{
+ margin:2px;
+ font-size:30px;
+ color:#674b7c}
+
+
+.cardtitleprice{
+  background-color:white;
+  border:2px solid #674b7c;
+  margin:2px;
 }
+
+.cardtitleprice p{
+  text-align:center;
+  font-family:'Judson';
+  font-size:30px;
+  margin:0;
+}
+
+.cardimagecontent{
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: row;}
+
+.cardimage img{
+ display:inline;
+ border:2px solid #674b7c;
+ height:400px;
+ width:400px;
+ align-self:center;}
+
+.cardcontent{
+  display:inline;
+}
+
+
 
 .mainheader {
   display: flex;
-  align-items: center;
+  border:5px solid white;
+  align-items:center;
+  background-color: #674b7c;
 }
 
 
-.navbarUl {
+.navbarUl1 {
   margin-left: 1400px;
   display: inline;
 }
 
-.navbar {
-  margin-right: 40px;
+.navbarUl2 {
+  margin-left:950px;
   display: inline;
-  font-family: 'Judson';
-  color: #f47362;
-  font-size: 40px;
 }
 
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
+.navbarli {
+  margin-right: 30px;
+  display: inline;
+  font-family: 'Judson';
+  color: white;
+  font-size: 30px;
 }
+
+.navbarli a{color:white;}
+
+.detailcontainer{
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  background-color: #f47362;
+  border:2px solid white;
+  font-family: 'Judson', serif;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;}
+
 
 
 .my-1 {
@@ -251,6 +311,7 @@ padding:0;}
   padding-bottom: var(--spacing-two);
 }
 
+/*Card CSS*/
 .card {
   width: 25%;
   text-align: center;
@@ -263,7 +324,37 @@ color:#674b7c}
   font-family:'Judson', serif;
   font-size:20px;
   color:white;
-  background-color:#f47362
+  background-color:#f47362;
+  border: solid 2px black;
+  outline: 0;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cardbutton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f47362;
+  z-index: -1;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cardbutton::after {
+  width: 90%;
+  height: 90%;
+}
+
+.cardbutton:hover::after {
+  width: 100%;
+  height: 100%;
+  top: 0.5rem;
+  left: 0.5rem;
 }
 
 .error-text {

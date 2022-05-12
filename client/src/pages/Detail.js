@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Cart from '../components/Cart';
-import CommentList from '../components/commentList';
-import CommentForm from '../components/commentForm';
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -85,44 +85,25 @@ function Detail() {
 
   return (
     <>
-      <div className="container my-1">
+      <div className="detailcontainer">
         {currentProduct && cart ? (
           <div>
-            <Link to="/" className="mx-5">← Products</Link>
+          <div className="back">
+            <Link to="/" >← Products</Link>
+            </div>
+            <br></br>
 
-            <div className="columns">
-              <div className="column is-half is-offset-one-quarter">
-                <div className="buttons is-centered">
-                  <button className="button is-primary" onClick={addToCart}>
-                    Add to Cart
-                  </button>
-                  <button className="button is-danger"
-                    disabled={!cart.find((p) => p._id === currentProduct._id)}
-                    onClick={removeFromCart}
-                  >
-                    Remove from Cart
-                  </button>
-                </div>
-
-                <div className="card">
-                  <header className="card-header">
-                    <p className="card-header-title is-size-4">
+                <div className="cardtitleprice">
+                    <p>
                       {currentProduct.name}
                     </p>
-                    <span>
-                      <p className="card-header-title is-size-4">
+                      <p>
                         $ {currentProduct.price}{' '}
                       </p>
-                    </span>
-                  </header>
-
-                  <div className="card-content">
-                    <div className="content">
-                      <p>{currentProduct.description}</p>
                     </div>
-                  </div>
 
-                  <div className="card-image">
+<div className="cardimagecontent">
+                  <div className="cardimage">
                     <figure className="image is-256x256">
                       <img
                         alt={currentProduct.name}
@@ -130,25 +111,41 @@ function Detail() {
                       />
                     </figure>
                   </div>
-                </div>
-              </div>
+
+                  <div className="cardcontent">
+                      <p>{currentProduct.description}</p>
+                  </div>
+                  </div>
+
+                  <div>
+                  <button className="cardbutton" onClick={addToCart}>
+                    Add to Cart
+                  </button>
+                  <button className="cardbutton"
+                    disabled={!cart.find((p) => p._id === currentProduct._id)}
+                    onClick={removeFromCart}
+                  >
+                    Remove from Cart
+                  </button>
+                  </div>
+
+            <div>
+            <CommentForm productId={currentProduct._id} />
             </div>
 
-            <CommentForm productId={currentProduct._id} />
-
-            <div className="columns">
-              <div className="column is-half is-offset-one-quarter has-text-weight-bold">
+              <div>
                 comments:
               </div>
-            </div>
 
+            <div>
             <CommentList comments={currentProduct.comments} />
-
+          </div>
           </div>
 
-        ) : null}
-        {loading ? <img src={spinner} alt="loading" /> : null}
-        <Cart />
+
+          ) : null}
+      {loading ? <img src={spinner} alt="loading" /> : null}
+      <Cart />
       </div>
     </>
   );

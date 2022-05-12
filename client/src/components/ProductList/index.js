@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import ProductItem from '../ProductItem';
+import CategoryMenu from '../CategoryMenu';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
@@ -45,14 +46,17 @@ function ProductList() {
 
   return (
     <div className="my-2">
-      <br></br>
+      <div id="productheader">
       <h2>Our Products:</h2>
-      <h3> Click on each donut for more information and to purchase. </h3>
-      <p> You <b>must</b> be logged in to read or write products comments or to purchase. </p>
+      <h3> Click on each listing for more information and to purchase. </h3>
+      <p> You <b>must</b> be logged in to read or write comments or to purchase items. </p>
       <p>Thank you for shopping with us!</p>
+      </div>
+      <br></br>
+      <CategoryMenu />
       <br></br>
       {state.products.length ? (
-        <div className="flex-row">
+        <div className="productdiv">
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

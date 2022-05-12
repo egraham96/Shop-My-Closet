@@ -69,7 +69,7 @@ const CommentForm = ({ productId }) => {
                     </div>
                 </>
             ) : (
-                <div className="container">
+                <div className="commentcontainer">
                     <div>
                         <div>
                             <p>

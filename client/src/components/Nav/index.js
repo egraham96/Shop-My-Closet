@@ -7,18 +7,18 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="navbarUl">
-          <li className="navbar">
+        <ul className="navbarUl1">
+          {/*<li className="navbarli">
+            <Link to="/orderHistory">
+              Order History
+            </Link>
+      </li>*/}
+          <li className="navbarli">
             <Link to="/orderHistory">
               Order History
             </Link>
           </li>
-          <li className="navbar">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
-          </li>
-          <li className="navbar">
+          <li className="navbarli">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
@@ -28,13 +28,13 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="navbarUl">
-          <li className="navbar">
+        <ul className="navbarUl2">
+          <li className="navbarli">
             <Link to="/signup">
               Signup
             </Link>
           </li>
-          <li className="navbar">
+          <li className="navbarli">
             <Link to="/login">
               Login
             </Link>
@@ -45,17 +45,17 @@ function Nav() {
   }
 
   return (
-    <header className="mainheader">
-        <div>
+    <div className="mainheader">
+        
         <Link to="/">
-          <img src="/images/mainlogo.png" alt="Shop My Closet Logo"/>
+          <img src="images/mainlogo.png" alt="Shop My Closet Logo"/>
         </Link>
-        </div>
+        
 
       <nav>
         {showNavigation()}
       </nav>
-    </header>
+    </div>
   );
 }
 

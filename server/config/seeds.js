@@ -11,7 +11,8 @@ db.once('open', async () => {
     { name: 'Accessories' },
     { name: 'Swimwear' },
     { name: 'Dresses' },
-    { name: 'Dresses' }
+    { name: 'Skirts' },
+    { name: 'Shoes' }
   ]);
 
   console.log('Categories Seeded');
@@ -20,112 +21,194 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Green Pants',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
-    },
-    {
-      name: 'Canned Coffee',
-      description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
-    },
-    {
-      name: 'Toilet Paper',
+        'Rare Abercrombie and Fitch Green khaki colored vintage 2000s low rise cargo pants with pockets and zip up details. Size 0, in excellent preloved condition. Pockets on side and in back, perfect low rise style to pair with a cami!',
+      image: 'GreenPants.jpg',
       category: categories[1]._id,
-      description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+      price: 40.00,
+      quantity: 1
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
+      name: `Mariner's Hat`,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
-    },
-    {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
-      description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
-    },
-    {
-      name: 'Camera',
-      category: categories[2]._id,
-      description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
-    },
-    {
-      name: 'Tablet',
-      category: categories[2]._id,
-      description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
-    },
-    {
-      name: 'Tales at Bedtime',
+        `Y2k Mariners Hat. MLB baseball snap back dad cap. Broke in slight fade. Seattle USA PNW`,
+      image: 'Hat.jpg',
       category: categories[3]._id,
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
+      price: 15,
+      quantity: 1
     },
     {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
+      name: 'Harley Tank',
+      category: categories[2]._id,
+      description:
+        `Original Deadstock Harley Davidson Baby Tank Size X-small-small`,
+      image: 'HarleyTank.jpg',
+      price: 75,
+      quantity: 1
     },
     {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
+      name: 'New Balance',
+      category: categories[7]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
+        `Jaden Smith X New Balance sneakers. Worn twice for working out. Platform`,
+      image: 'NewBalance.jpg',
+      price: 65,
+      quantity: 1
     },
     {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
+      name: 'Red Sweater',
+      category: categories[2]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
+        'Red Urban Outfitters cropped sweater! Super cute and would look great for spring :)',
+      image: 'Sweater.jpg',
+      price: 20,
+      quantity: 1
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'Sandals',
+      category: categories[7]._id,
+      description:
+        'Courtney Platform Sandal by Vagabond Shoemakers Size 8.I am usually a size 7.5 and these sandals were huge on me length wise. I am so so so sad about it as they are truly the perfect strappy y2k platform sandals.',
+      image: 'Sandals.jpg',
+      price: 175,
+      quantity: 1,
+      reviews: [{
+        reviewAuthor:'Stephanie',
+        reviewText: 'Omg these are to die for...',
+        reviewDate: '08/01/2021',
+    },
+    {
+        reviewAuthor:'Danica',
+        reviewText: `Would you consider shipping internationally?`,
+        reviewDate: '04/16/2022',
+    }]
+    },
+    {
+      name: 'Marc Jacobs Pink Skirt',
+      category: categories[6]._id,
+      description:
+        `Brand: Marc Jacobs. 100% cotton. Purchased from someone else recently but was too wide for me. Size:2. Waist measurement: 16 inches.Length is 14`,
+      image: 'Skirt.jpg',
+      price: 50,
+      quantity: 1,
+      reviews: [{
+        reviewAuthor:'Emma',
+        reviewText: 'Omg I love this skirt so much. Would you consider lowing the price?',
+        reviewDate: '04/10/2022',
+    },
+    {
+        reviewAuthor:'Julia',
+        reviewText: 'I saw this on your instagram and I want it!',
+        reviewDate: '10/13/2021',
+    },
+    {
+      reviewAuthor:'Julia',
+      reviewText: 'I saw this on your instagram and I want it!',
+      reviewDate: '10/13/2021',
+  }]
+    },
+    {
+      name: 'Adidas',
+      category: categories[7]._id,
+      description:
+        `Grey Adidas Campus Sneakers, 7.5 women 5.5 mens. Bought these on Ebay and worn once. Hardly used. Great condition. Super cute, just did not work with my wardrobe!`,
+      image: 'Adidas.jpg',
+      price: 40,
+      quantity: 1
+    },
+    {
+      name: 'Y2K Levis',
+      category: categories[1]._id,
+      description: `Repop! Early 2000s Levi’s 517 Dark Wash Blue Mid Rise Bell Bottom Bootcut flare jeans. Tagged as a size 14 but best fits a 24 inch waist.`,
+      image: 'Jeans.jpg',
+      price: 50,
+      quantity: 1,
+      reviews: [{
+        reviewAuthor:'Emma',
+        reviewText: 'These are so cute',
+        reviewDate: '05/10/2022',
+    },
+    {
+        reviewAuthor:'Julia',
+        reviewText: 'I want these',
+        reviewDate: '10/13/2021',
+    }]
+    },
+    {
+      name: 'Swimsuit',
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
-      quantity: 600
-    }
+        `Cupshe And White Stripe V-Neck One Piece Swimsuit Size Medium
+        New no tags
+        This classic Black and White Stripe V-Neck One-Piece Swimsuit is a must-have for every body.`,
+      image: 'Swimsuit.jpg',
+      price: 12,
+      quantity: 1
+    },
+    {
+      name: 'Halter Dress',
+      category: categories[5]._id,
+      description:
+        `Free people cross halter dress! Size 2. Only worn a few times. Super cute for summer.`,
+      image: 'Dress.jpg',
+      price: 25,
+      quantity: 1
+    },
+    {
+      name: 'Blue Tank Top',
+      category: categories[2]._id,
+      description:
+        `Vintage Y2K Cottage Baby Blue V Neck Cami Tank Top SZ XS Early 2000s Cottagecore💙
+        Pet free and smoke free home
+        Pre owned great condition
+        `,
+      image: 'BlueCami.jpg',
+      price: 15,
+      quantity: 1,
+      reviews: [{
+        reviewAuthor:'Ashley',
+        reviewText: 'This is so cute',
+        reviewDate: '05/10/2022',
+    }],
+    },
+    {
+      name: 'Butterfly Dress',
+      category: categories[5]._id,
+      description:
+        `Urban Outfitters Kimchi Blue Yellow Empirewaist Floral Mini Dress Size Small.`,
+      image: 'ButterflyDress.jpg',
+      price: 25,
+      quantity: 1
+    },
+    {
+      name: 'Jean Short',
+      category: categories[1]._id,
+      description:
+        `Everlane Womens Cheeky Short Size 33 Blue Denim Cut Off Button Fly`,
+      image: 'Short.jpg',
+      price: 30,
+      quantity: 1
+    },
+    {
+      name: 'Jean Jacket',
+      category: categories[0]._id,
+      description:
+        `JEAN PAUL GAULTIER JEANS 1990s DENIM JACKET!! This vintage Jean Paul Gaultier Jean's denim jacket, circa the 1990s, is made out of 100% cotton medium blue denim.`,
+      image: 'JeanJacket.jpg',
+      price: 100,
+      quantity: 1,
+      reviews: [{
+        reviewAuthor:'Erica',
+        reviewText: 'Omg this jacket is to die for. Would you consider lowing the price?',
+        reviewDate: '03/10/2021',
+    },
+    {
+        reviewAuthor:'Alyssa',
+        reviewText: 'I saw this on your instagram and I want it!',
+        reviewDate: '10/20/2021',
+    }]
+    },
   ]);
 
   console.log('Products Seeded');
