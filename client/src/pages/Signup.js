@@ -94,6 +94,7 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
+        <br></br>
         <div>
           <button className= "login-button" type="submit">Submit</button>
         </div>
