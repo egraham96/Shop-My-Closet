@@ -12,9 +12,12 @@ import {
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
-import { QUERY_PRODUCTS } from '../utils/queries';
+import { 
+  QUERY_PRODUCTS,
+  QUERY_USER } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -23,8 +26,12 @@ function Detail() {
   const [currentProduct, setCurrentProduct] = useState({});
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+  
+  const { user } = useQuery(QUERY_USER);
+
 
   const { products, cart } = state;
+
 
   useEffect(() => {
     // already in global store
@@ -81,7 +88,11 @@ function Detail() {
     });
 
     idbPromise('cart', 'delete', { ...currentProduct });
-  };
+  }
+
+
+
+
 
   return (
     <>
@@ -104,17 +115,24 @@ function Detail() {
 
 <div className="cardimagecontent">
                   <div className="cardimage">
-                    <figure className="image is-256x256">
+                    <figure className="detailimage">
                       <img
                         alt={currentProduct.name}
                         src={`/images/${currentProduct.image}`}
                       />
                     </figure>
                   </div>
-
+ 
+                  {user ? (
                   <div className="cardcontent">
+                    <p>{user.firstName}</p>
                       <p>{currentProduct.description}</p>
-                  </div>
+                      </div>
+                  ) : (
+                    <div className="cardcontent">
+                      <p>{currentProduct.description}</p>
+                      </div>
+                  )}
                   </div>
 
                   <div>

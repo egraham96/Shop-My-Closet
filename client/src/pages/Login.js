@@ -30,12 +30,17 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="login-container">
+      <div className="login-back">
       <Link to="/signup">← Go to Signup</Link>
-
+      </div>
+      <br></br>
+      <div>
       <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
+      </div>
+      <br></br>
+      <form className="login-form" onSubmit={handleFormSubmit}>
+        <div>
           <label htmlFor="email">Email address:</label>
           <input
             placeholder="youremail@test.com"
@@ -45,7 +50,7 @@ function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div>
           <label htmlFor="pwd">Password:</label>
           <input
             placeholder="******"
@@ -60,8 +65,9 @@ function Login(props) {
             <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null}
+         <br></br>
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button className="cardbutton" type="submit">Submit</button>
         </div>
       </form>
     </div>

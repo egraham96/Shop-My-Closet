@@ -183,44 +183,6 @@ margin:2px;
 }
 
 
-.back{
- margin:2px;
- font-size:30px;
- color:#674b7c}
-
-
-.cardtitleprice{
-  background-color:white;
-  border:2px solid #674b7c;
-  margin:2px;
-}
-
-.cardtitleprice p{
-  text-align:center;
-  font-family:'Judson';
-  font-size:30px;
-  margin:0;
-}
-
-.cardimagecontent{
- display:flex;
- justify-content: center;
- align-items: center;
- flex-direction: row;}
-
-.cardimage img{
- display:inline;
- border:2px solid #674b7c;
- height:400px;
- width:400px;
- align-self:center;}
-
-.cardcontent{
-  display:inline;
-}
-
-
-
 .mainheader {
   display: flex;
   border:5px solid white;
@@ -258,19 +220,10 @@ margin:2px;
   font-family: 'Judson', serif;
   width: 85%;
   margin-left: auto;
-  margin-right: auto;}
-
-
-
-.my-1 {
-  margin-top: var(--spacing-one);
-  margin-bottom: var(--spacing-one);
+  margin-right: auto;
 }
 
-.my-2 {
-  margin-top: var(--spacing-two);
-  margin-bottom: var(--spacing-two);
-}
+
 
 .my-2 h2 {
   font-family: 'Judson', serif;
@@ -357,6 +310,81 @@ color:#674b7c}
   left: 0.5rem;
 }
 
+/*Detail.js*/
+
+.back{
+  margin:2px;
+  font-size:30px;
+  color:#674b7c}
+ 
+ 
+ .cardtitleprice{
+   width:200px;
+   background-color:white;
+   border:2px solid #674b7c;
+   margin:0 auto;
+ }
+ 
+ .cardtitleprice p{
+   text-align:center;
+   font-family:'Judson';
+   font-size:30px;
+   margin:0;
+ }
+
+.cardimagecontent{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;}
+ 
+ .cardimage img{
+  display:inline;
+  border:8px solid white;
+  height:400px;
+  width:400px;
+  align-self:center;}
+ 
+ .cardcontent{
+   display:inline;
+ }
+ 
+
+
+
+/*Login page*/
+
+.login-back{
+  font-size:30px;
+  color:#674b7c;
+  margin:2px;}
+ 
+
+.login-container {
+  background-color: #f47362;
+  border:5px solid white;
+  font-family: 'Judson', serif;
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-container h2{
+  font-size:50px;
+  font-weight:bold;
+  text-align: center;
+  width:100px;
+  margin: 0 auto;
+  font-family:'Judson'
+}
+
+.login-form{
+  margin:0 auto;
+}
 .error-text {
   color: var(--error);
 }

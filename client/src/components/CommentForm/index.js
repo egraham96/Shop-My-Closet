@@ -60,7 +60,7 @@ const CommentForm = ({ productId }) => {
                                         style={{ lineHeight: '1.5', resize: 'vertical' }}
                                         onChange={handleChange}
                                     ></textarea>
-                                    <button className="button is-primary my-4" type="submit">
+                                    <button className="cardbutton" type="submit">
                                         Add a Comment
                                     </button>
                                 </form>
