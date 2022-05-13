@@ -40,8 +40,21 @@ function Login(props) {
       </div>
       <br></br>
       <form className="login-form" onSubmit={handleFormSubmit}>
+        <br></br>
+      <figure aria-hidden="true">
+    <div class="person-body"></div>
+    <div class="neck skin"></div>
+    <div class="head skin">
+      <div class="eyes"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="hair"></div>
+    <div class="ears"></div>
+    <div class="shirt-1"></div>
+    <div class="shirt-2"></div>
+  </figure>
         <div>
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor="email">  Email address:     </label>
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -51,7 +64,7 @@ function Login(props) {
           />
         </div>
         <div>
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd">   Password:    </label>
           <input
             placeholder="******"
             name="password"
@@ -66,10 +79,13 @@ function Login(props) {
           </div>
         ) : null}
          <br></br>
-        <div className="flex-row flex-end">
-          <button className="cardbutton" type="submit">Submit</button>
+        <div>
+          <button className="login-button" type="submit">Submit</button>
         </div>
+        <br></br><br></br>
       </form>
+      <br></br><br></br>
+      <br></br><br></br>
     </div>
   );
 }
