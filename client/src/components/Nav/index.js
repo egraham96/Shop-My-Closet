@@ -44,11 +44,12 @@ function Nav() {
     }
   }
 
+
   return (
     <div className="mainheader">
         
         <Link to="/">
-          <img src="images/mainlogo.png" alt="Shop My Closet Logo"/>
+          <img id= "mainheaderimage" src="images/mainlogo.png" alt="Shop My Closet Logo"/>
         </Link>
         
 
