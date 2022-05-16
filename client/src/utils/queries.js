@@ -6,9 +6,9 @@ export const QUERY_PRODUCTS = gql`
       _id
       name
       description
+      images
       price
       quantity
-      images
       category {
         _id
       }comments {
@@ -37,6 +37,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       description
       price
       quantity
+      images
       category {
         name
       }

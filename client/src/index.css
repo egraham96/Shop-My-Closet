@@ -135,10 +135,18 @@ input:focus {
 }
 
 #productheader{
+  font-size:20px;
+font-family:'Judson';
 border:2px solid #674b7c;
 background-color: white;
 margin:2px;
 }
+
+#productheader h2{font-size:26px;}
+
+#productheader h3{
+  font-family:'Judson';
+  font-size:22px;}
 
 .categorynav{
   border:2px solid #674b7c;
@@ -148,10 +156,11 @@ margin:2px;
 .categorynav h2 {
   font-family: 'Judson', serif;
   font-weight: bold;
+  font-size:26px;
 }
 
 .categorynav button {
-  font-size:26px;
+  font-size:18px;
   Font-family: 'Judson', serif;
   color:white;
   background-color:#f47362;
@@ -170,7 +179,7 @@ margin:2px;
 .container button {
   background-color:#f47362;
   font-family: 'Judson', serif;
-  font-size:26px;
+  font-size:18px;
   color:white;
 }
 
@@ -199,12 +208,12 @@ margin:2px;
 
 
 .navbarUl1 {
-  margin-left: 600px;
+  margin-left: 150px;
   display: inline;
 }
 
 .navbarUl2 {
-  margin-left:950px;
+  margin-left:400px;
   display: inline;
 }
 
@@ -213,7 +222,7 @@ margin:2px;
   display: inline;
   font-family: 'Judson';
   color: white;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .navbarli a{color:white;}
@@ -277,7 +286,7 @@ padding:0;}
   text-align: center;
 }
 
-.card p {font-size:30px;
+.card p {font-size:26px;
 color:#674b7c}
 
 .cardbutton {
@@ -335,7 +344,7 @@ color:#674b7c}
  .cardtitleprice p{
    text-align:center;
    font-family:'Judson';
-   font-size:30px;
+   font-size:26px;
    margin:0;
  }
 

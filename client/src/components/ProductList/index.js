@@ -46,6 +46,7 @@ function ProductList() {
 
   return (
     <div className="my-2">
+      <br></br>
       <div id="productheader">
       <h2>Our Products:</h2>
       <h3> Click on each listing for more information and to purchase. </h3>
