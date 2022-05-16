@@ -192,6 +192,11 @@ margin:2px;
   background-color: #674b7c;
 }
 
+.mainheader img{
+  height:121px;
+  width:523px;
+}
+
 
 .navbarUl1 {
   margin-left: 600px;
