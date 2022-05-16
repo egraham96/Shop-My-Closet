@@ -82,7 +82,7 @@ function Login(props) {
         <div>
           <button className="login-button" type="submit">Submit</button>
         </div>
-        <br></br><br></br>
+        <br></br>
       </form>
       <br></br><br></br>
       <br></br><br></br>

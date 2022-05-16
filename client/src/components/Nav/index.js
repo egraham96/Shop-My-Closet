@@ -8,11 +8,11 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <ul className="navbarUl1">
-          {/*<li className="navbarli">
-            <Link to="/orderHistory">
-              Order History
+          {<li className="navbarli">
+            <Link to="/Upload">
+              Add New Product
             </Link>
-      </li>*/}
+      </li>}
           <li className="navbarli">
             <Link to="/orderHistory">
               Order History

@@ -63,7 +63,7 @@ const resolvers = {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
+          image: [`${url}/images/${products[i].images[0]}`]
         });
 
         const price = await stripe.prices.create({
@@ -166,7 +166,17 @@ const resolvers = {
           { new: true }
         );
       }
-    }
+    },
+    addProduct: async (parent, { product }, context) => {
+      console.log(context);
+      if (context.user) {
+        const newProduct = new Product({ product });
+
+        await User.findByIdAndUpdate(context.user._id, { $push: { products: newProduct } });
+
+        return newProduct;
+      }
+    },
   }
 }
 

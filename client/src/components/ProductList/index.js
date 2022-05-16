@@ -59,14 +59,15 @@ function ProductList() {
         <div className="productdiv">
           {filterProducts().map((product) => (
             <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              quantity={product.quantity}
-            />
-          ))}
+            key={product._id}
+            _id={product._id}
+            name={product.name}
+            description={product.description}
+            image={[product.images[0]]}
+            price={product.price}
+            quantity={product.quantity}
+          />
+        ))}
         </div>
       ) : (
         <h3>You haven't added any products yet!</h3>

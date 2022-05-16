@@ -69,3 +69,22 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const ADD_PRODUCT = gql`
+mutation addProduct(
+  $name: String!
+  $description: String!
+  $images: [String!]
+  $price: Integer
+  $quantity: Integer
+  
+) {
+  addProduct(
+    name: $name
+    description: $description
+    images: $images
+    price: $price
+    quantity: $quantity
+  ) 
+  }
+`;

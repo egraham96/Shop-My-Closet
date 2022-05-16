@@ -118,7 +118,7 @@ function Detail() {
                     <figure className="detailimage">
                       <img
                         alt={currentProduct.name}
-                        src={`/images/${currentProduct.image}`}
+                        src={`/images/${currentProduct.images[0]}`}
                       />
                     </figure>
                   </div>

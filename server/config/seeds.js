@@ -24,7 +24,7 @@ db.once('open', async () => {
       name: 'Green Pants',
       description:
         'Rare Abercrombie and Fitch Green khaki colored vintage 2000s low rise cargo pants with pockets and zip up details. Size 0, in excellent preloved condition. Pockets on side and in back, perfect low rise style to pair with a cami!',
-      image: 'GreenPants.jpg',
+      images: ["GreenPants.jpg", "Skirt.jpg"],
       category: categories[1]._id,
       price: 40.00,
       quantity: 1
@@ -33,7 +33,7 @@ db.once('open', async () => {
       name: `Mariner's Hat`,
       description:
         `Y2k Mariners Hat. MLB baseball snap back dad cap. Broke in slight fade. Seattle USA PNW`,
-      image: 'Hat.jpg',
+      images: ['Hat.jpg'],
       category: categories[3]._id,
       price: 15,
       quantity: 1
@@ -43,7 +43,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         `Original Deadstock Harley Davidson Baby Tank Size X-small-small`,
-      image: 'HarleyTank.jpg',
+      images: ['HarleyTank.jpg'],
       price: 75,
       quantity: 1
     },
@@ -52,7 +52,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         `Jaden Smith X New Balance sneakers. Worn twice for working out. Platform`,
-      image: 'NewBalance.jpg',
+      images: ['NewBalance.jpg'],
       price: 65,
       quantity: 1
     },
@@ -61,7 +61,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Red Urban Outfitters cropped sweater! Super cute and would look great for spring :)',
-      image: 'Sweater.jpg',
+      images: ['Sweater.jpg'],
       price: 20,
       quantity: 1
     },
@@ -70,7 +70,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         'Courtney Platform Sandal by Vagabond Shoemakers Size 8.I am usually a size 7.5 and these sandals were huge on me length wise. I am so so so sad about it as they are truly the perfect strappy y2k platform sandals.',
-      image: 'Sandals.jpg',
+      images: ['Sandals.jpg'],
       price: 175,
       quantity: 1,
       reviews: [{
@@ -89,7 +89,7 @@ db.once('open', async () => {
       category: categories[6]._id,
       description:
         `Brand: Marc Jacobs. 100% cotton. Purchased from someone else recently but was too wide for me. Size:2. Waist measurement: 16 inches.Length is 14`,
-      image: 'Skirt.jpg',
+      images: ['Skirt.jpg'],
       price: 50,
       quantity: 1,
       reviews: [{
@@ -113,7 +113,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         `Grey Adidas Campus Sneakers, 7.5 women 5.5 mens. Bought these on Ebay and worn once. Hardly used. Great condition. Super cute, just did not work with my wardrobe!`,
-      image: 'Adidas.jpg',
+      images: ['Adidas.jpg'],
       price: 40,
       quantity: 1
     },
@@ -121,7 +121,7 @@ db.once('open', async () => {
       name: 'Y2K Levis',
       category: categories[1]._id,
       description: `Repop! Early 2000s Levi’s 517 Dark Wash Blue Mid Rise Bell Bottom Bootcut flare jeans. Tagged as a size 14 but best fits a 24 inch waist.`,
-      image: 'Jeans.jpg',
+      images: ['Jeans.jpg'],
       price: 50,
       quantity: 1,
       reviews: [{
@@ -142,7 +142,7 @@ db.once('open', async () => {
         `Cupshe And White Stripe V-Neck One Piece Swimsuit Size Medium
         New no tags
         This classic Black and White Stripe V-Neck One-Piece Swimsuit is a must-have for every body.`,
-      image: 'Swimsuit.jpg',
+      images: ['Swimsuit.jpg'],
       price: 12,
       quantity: 1
     },
@@ -151,7 +151,7 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         `Free people cross halter dress! Size 2. Only worn a few times. Super cute for summer.`,
-      image: 'Dress.jpg',
+      images: ['Dress.jpg'],
       price: 25,
       quantity: 1
     },
@@ -163,7 +163,7 @@ db.once('open', async () => {
         Pet free and smoke free home
         Pre owned great condition
         `,
-      image: 'BlueCami.jpg',
+      images: ['BlueCami.jpg'],
       price: 15,
       quantity: 1,
       reviews: [{
@@ -177,7 +177,7 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         `Urban Outfitters Kimchi Blue Yellow Empirewaist Floral Mini Dress Size Small.`,
-      image: 'ButterflyDress.jpg',
+      images: ['ButterflyDress.jpg'],
       price: 25,
       quantity: 1
     },
@@ -186,7 +186,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         `Everlane Womens Cheeky Short Size 33 Blue Denim Cut Off Button Fly`,
-      image: 'Short.jpg',
+      images: ['Short.jpg'],
       price: 30,
       quantity: 1
     },
@@ -195,7 +195,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         `JEAN PAUL GAULTIER JEANS 1990s DENIM JACKET!! This vintage Jean Paul Gaultier Jean's denim jacket, circa the 1990s, is made out of 100% cotton medium blue denim.`,
-      image: 'JeanJacket.jpg',
+      images: ['JeanJacket.jpg'],
       price: 100,
       quantity: 1,
       reviews: [{
