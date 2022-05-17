@@ -18,8 +18,9 @@ const CommentForm = ({ productId }) => {
             const { data } = await addComment({
                 variables: {
                     productId,
-                    commentText,
                     commentAuthor: Auth.getProfile().data.email,
+                    commentText,
+                    commentDate: Date.now()
                 },
             });
 
@@ -42,25 +43,23 @@ const CommentForm = ({ productId }) => {
 
             {Auth.loggedIn() ? (
                 <>
-                    <div className="container">
-                        <div className="columns">
-                            <div className="column is-half is-offset-one-quarter">
+                    <div className="comment-container">
+                        <div>
+                            <div >
                                 <label>
                                     What are your thoughts on this item?
                                 </label>
                                 <form
-                                    className="flex-row justify-center justify-space-between-md align-center"
                                     onSubmit={handleFormSubmit}
                                 >
                                     <textarea
                                         name="commentText"
-                                        className="textarea is-primary"
-                                        placeholder="Delicious!"
+                                        className=""
                                         value={commentText}
                                         style={{ lineHeight: '1.5', resize: 'vertical' }}
                                         onChange={handleChange}
                                     ></textarea>
-                                    <button className="cardbutton" type="submit">
+                                    <button className="card-button" type="submit">
                                         Add a Comment
                                     </button>
                                 </form>
@@ -69,16 +68,16 @@ const CommentForm = ({ productId }) => {
                     </div>
                 </>
             ) : (
-                <div className="commentcontainer">
-                    <div>
+                <div className="comment-login">
+                    <br></br>
                         <div>
                             <p>
-                                You need to be logged in add your comment. Please{' '}
+                                You need to be logged in to add your comment. Please{' '}
                                 <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
                             </p>
                         </div>
+                        <br></br>
                     </div>
-                </div>
             )}
         </div>
     );

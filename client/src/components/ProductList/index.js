@@ -14,6 +14,7 @@ function ProductList() {
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+  console.log(data)
 
   useEffect(() => {
     if (data) {
@@ -45,9 +46,9 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
+    <div className="product-list">
       <br></br>
-      <div id="productheader">
+      <div className="product-header">
       <h2>Our Products:</h2>
       <h3> Click on each listing for more information and to purchase. </h3>
       <p> You <b>must</b> be logged in to read or write comments or to purchase items. </p>
@@ -57,7 +58,7 @@ function ProductList() {
       <CategoryMenu />
       <br></br>
       {state.products.length ? (
-        <div className="productdiv">
+        <div className="product-div">
           {filterProducts().map((product) => (
             <ProductItem
             key={product._id}

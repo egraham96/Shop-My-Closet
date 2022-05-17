@@ -73,15 +73,15 @@ db.once('open', async () => {
       images: ['Sandals.jpg'],
       price: 175,
       quantity: 1,
-      reviews: [{
-        reviewAuthor:'Stephanie',
-        reviewText: 'Omg these are to die for...',
-        reviewDate: '08/01/2021',
+      comments: [{
+        commentAuthor:'Emma',
+        commentText: 'Omg these are to die for...',
+        commentDate: '08/01/2021',
     },
     {
-        reviewAuthor:'Danica',
-        reviewText: `Would you consider shipping internationally?`,
-        reviewDate: '04/16/2022',
+        commentAuthor:'Danica',
+        commentText: `Would you consider shipping internationally?`,
+        commentDate: '04/16/2022',
     }]
     },
     {
@@ -92,20 +92,20 @@ db.once('open', async () => {
       images: ['Skirt.jpg'],
       price: 50,
       quantity: 1,
-      reviews: [{
-        reviewAuthor:'Emma',
-        reviewText: 'Omg I love this skirt so much. Would you consider lowing the price?',
-        reviewDate: '04/10/2022',
+      comments: [{
+        commentAuthor:'Emma',
+        commentText: 'Omg I love this skirt so much. Would you consider lowing the price?',
+        commentDate: '04/10/2022',
     },
     {
-        reviewAuthor:'Julia',
-        reviewText: 'I saw this on your instagram and I want it!',
-        reviewDate: '10/13/2021',
+        commentAuthor:'Julia',
+        commentText: 'I saw this on your instagram and I want it!',
+        commentDate: '10/13/2021',
     },
     {
-      reviewAuthor:'Julia',
-      reviewText: 'I saw this on your instagram and I want it!',
-      reviewDate: '10/13/2021',
+      commentAuthor:'Adele',
+      commentText: 'Stop I need this',
+      commentDate: '09/01/2021',
   }]
     },
     {
@@ -124,15 +124,15 @@ db.once('open', async () => {
       images: ['Jeans.jpg'],
       price: 50,
       quantity: 1,
-      reviews: [{
-        reviewAuthor:'Emma',
-        reviewText: 'These are so cute',
-        reviewDate: '05/10/2022',
+      comments: [{
+        commentAuthor:'Emma',
+        commentText: 'These are so cute',
+        commentDate: '05/10/2022',
     },
     {
-        reviewAuthor:'Julia',
-        reviewText: 'I want these',
-        reviewDate: '10/13/2021',
+        commentAuthor:'Julia',
+        commentText: 'I want these',
+        commentDate: '10/13/2021',
     }]
     },
     {
@@ -166,10 +166,10 @@ db.once('open', async () => {
       images: ['BlueCami.jpg'],
       price: 15,
       quantity: 1,
-      reviews: [{
-        reviewAuthor:'Ashley',
-        reviewText: 'This is so cute',
-        reviewDate: '05/10/2022',
+      comments: [{
+        commentAuthor:'Ashley',
+        commentText: 'This is so cute',
+        commentDate: '05/10/2022',
     }],
     },
     {
@@ -198,15 +198,15 @@ db.once('open', async () => {
       images: ['JeanJacket.jpg'],
       price: 100,
       quantity: 1,
-      reviews: [{
-        reviewAuthor:'Erica',
-        reviewText: 'Omg this jacket is to die for. Would you consider lowing the price?',
-        reviewDate: '03/10/2021',
+      comments: [{
+        commentAuthor:'Erica',
+        commentText: 'Omg this jacket is to die for. Would you consider lowing the price?',
+        commentDate: '03/10/2021',
     },
     {
-        reviewAuthor:'Alyssa',
-        reviewText: 'I saw this on your instagram and I want it!',
-        reviewDate: '10/20/2021',
+        commentAuthor:'Alyssa',
+        commentText: 'I saw this on your instagram and I want it!',
+        commentDate: '10/20/2021',
     }]
     },
   ]);

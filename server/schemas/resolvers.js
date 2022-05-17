@@ -142,7 +142,7 @@ const resolvers = {
         { _id: productId },
         {
           $addToSet: {
-            comments: { commentText, commentAuthor: context.user.firstName },
+            comments: { commentText, commentAuthor: context.user.firstName, commentDate: Date.now() },
           },
         },
         {

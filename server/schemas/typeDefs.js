@@ -36,7 +36,7 @@ const typeDefs = gql`
     _id: ID
     commentAuthor: String
     commentText: String
-    createdAt: String
+    commentDate: String
   }
 
   type Checkout {

@@ -64,7 +64,7 @@ export const ADD_COMMENT = gql`
       comments{
         commentAuthor
         commentText
-        createdAt
+        commentDate
       }
     }
   }

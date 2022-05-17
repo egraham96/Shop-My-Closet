@@ -34,13 +34,15 @@ function Detail() {
 
 
   useEffect(() => {
+  async function getProduct() {
+    try {
     // already in global store
     if (products.length) {
-      setCurrentProduct(products.find((product) => product._id === id));
+    setCurrentProduct(products.find((product) => product._id === id));
     }
     // retrieved from server
-    else if (data) {
-      dispatch({
+    else if (data)  {
+      await dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products,
       });
@@ -51,14 +53,21 @@ function Detail() {
     }
     // get cache from idb
     else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      await idbPromise('products', 'get').then((indexedProducts) => {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: indexedProducts,
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+
+} catch(err) {
+  console.log(err); 
+}
+
+} getProduct()
+}, [products, data, loading, dispatch, id])
+ 
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
@@ -90,21 +99,17 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   }
 
-
-
-
-
   return (
     <>
-      <div className="detailcontainer">
+      <div className="detail-container">
         {currentProduct && cart ? (
           <div>
-          <div className="back">
+          <div className="detail-back">
             <Link to="/" >← Products</Link>
             </div>
             <br></br>
 
-                <div className="cardtitleprice">
+                <div className="detail-card">
                     <p>
                       {currentProduct.name}
                     </p>
@@ -113,52 +118,55 @@ function Detail() {
                       </p>
                     </div>
 
-<div className="cardimagecontent">
-                  <div className="cardimage">
-                    <figure className="detailimage">
-                      {console.log(currentProduct.image)}
-                      <img
-                        alt={currentProduct.name}
-                        src={`/images/${currentProduct.image}`}
-                      />
-                    </figure>
-                  </div>
- 
-                  {user ? (
-                  <div className="cardcontent">
+  
+                    <div className="detail-card-content">
+<div className="detail-card-image">
+  {console.log(currentProduct.images)}
+  {<img alt={currentProduct.images}
+                     src={`/images/${currentProduct.images}`}
+        />}
+            {/*currentProduct.images.map((img,i)=>(
+                 <img key= {img[i]} alt={img[i]}
+                     src={`/images/${img[i]}`}
+                     />  
+            ))*/}
+    </div>
+    <div className="detail-description-box">
+    {user ? (
+                  <div className="detail-card-info">
                     <p>{user.firstName}</p>
                       <p>{currentProduct.description}</p>
                       </div>
                   ) : (
-                    <div className="cardcontent">
+                    <div className="detail-card-info">
                       <p>{currentProduct.description}</p>
                       </div>
-                  )}
-                  </div>
-
-                  <div>
-                  <button className="cardbutton" onClick={addToCart}>
+                  )}        
+ </div>
+ </div>
+                    
+                  <div className="detail-buttons-box">
+                  <button className="detail-button" onClick={addToCart}>
                     Add to Cart
                   </button>
-                  <button className="cardbutton"
+                  <br></br>
+                  <button className="detail-button"
                     disabled={!cart.find((p) => p._id === currentProduct._id)}
                     onClick={removeFromCart}
                   >
                     Remove from Cart
                   </button>
                   </div>
+                  <br></br><br></br>
 
-            <div>
+            <div className="comment-storage">
+            <CommentList comments={currentProduct.comments} 
+            />
+          </div>
+
+          <div>
             <CommentForm productId={currentProduct._id} />
             </div>
-
-              <div>
-                comments:
-              </div>
-
-            <div>
-            <CommentList comments={currentProduct.comments} />
-          </div>
           </div>
 
 
