@@ -143,8 +143,8 @@ input:focus {
 
 /*Category Nav Bar*/
 .categorynav{
-  border:2px solid #674b7c;
-  margin: 2px solid;
+  border:6px solid #674b7c;
+  margin: 6px;
   background-color:white;
 }
 .categorynav h2 {
@@ -162,7 +162,7 @@ input:focus {
 
 .container {
   background-color: #f47362;
-  border:5px solid #f47362;
+  border:10px solid white;
   font-family: 'Judson', serif;
   width: 85%;
   max-width: 1200px;
@@ -178,6 +178,7 @@ input:focus {
 }
 
 /*Product List and Product Item */
+.product-list{border: 3px solid #674b7c;}
 .product-list h2 {
   font-family: 'Judson', serif;
   font-weight: bold;
@@ -202,9 +203,10 @@ input:focus {
 .product-header{
   font-size:20px;
   font-family:'Judson';
-  border:2px solid #674b7c;
+  border:6px solid #674b7c;
   background-color: white;
-  margin:2px;
+  margin-left:6px;
+  margin-right:6px;
   }
   
 .product-header h2{
@@ -221,7 +223,6 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     background-color: #f47362;
-    border:2px solid #674b7c;
     margin: 2px solid;
   }
 
