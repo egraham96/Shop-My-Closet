@@ -46,6 +46,7 @@ function Nav() {
 
 
   return (
+    <div className="mainheader-border">
     <div className="mainheader">
         
         <Link to="/">
@@ -57,7 +58,9 @@ function Nav() {
         {showNavigation()}
       </nav>
     </div>
+    </div>
   );
 }
+
 
 export default Nav;

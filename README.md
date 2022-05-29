@@ -28,7 +28,7 @@ In your terminal, enter "npm run develop" to start the server and deploy the app
 - [See Live Site](https://shop-my-closet.herokuapp.com/)
 - [Link to GitHub Repo](https://github.com/egraham96/ShopMyCloset)
 
-## Pcomment of Working Site:
+## Screenshot of Working Site:
 
 ![Screenshot of Deployed Application](./public/images/ScreenshotofDeployedApplication.PNG)
 ![Screenshot of Deployed Application](./public/images/ScreenshotofDeployedApplication2.PNG)

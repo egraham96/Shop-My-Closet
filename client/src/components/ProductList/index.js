@@ -46,6 +46,7 @@ function ProductList() {
   }
 
   return (
+    <div className="product-list-border">
     <div className="product-list">
       <br></br>
       <div className="product-header">
@@ -75,6 +76,7 @@ function ProductList() {
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <img src={spinner} alt="loading" /> : null}
+    </div>
     </div>
   );
 }

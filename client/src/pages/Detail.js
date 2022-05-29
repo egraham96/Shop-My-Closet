@@ -108,7 +108,8 @@ function Detail() {
             <Link to="/" >← Products</Link>
             </div>
             <br></br>
-
+                <div className="detail-box">
+                  <br></br>
                 <div className="detail-card">
                     <p>
                       {currentProduct.name}
@@ -117,6 +118,7 @@ function Detail() {
                         $ {currentProduct.price}{' '}
                       </p>
                     </div>
+                    <br></br>
 
   
                     <div className="detail-card-content">
@@ -125,26 +127,42 @@ function Detail() {
   {<img alt={currentProduct.images}
                      src={`/images/${currentProduct.images}`}
         />}
-            {/*currentProduct.images.map((img,i)=>(
-                 <img key= {img[i]} alt={img[i]}
-                     src={`/images/${img[i]}`}
-                     />  
-            ))*/}
     </div>
     <div className="detail-description-box">
-    {user ? (
+    {user ? ( <div className="inner-detail-box">
+     <div className="detail-card-pt2">
+                    <p>
+                   {currentProduct.name}
+                 </p>
+                   <p>
+                     $ {currentProduct.price}{' '}
+                   </p>
+                   </div>
+                   <br></br>
                   <div className="detail-card-info">
                     <p>{user.firstName}</p>
                       <p>{currentProduct.description}</p>
                       </div>
+                      </div>
                   ) : (
+                    <div className="inner-detail-box">
+                    <div className="detail-card-pt2">
+                    <p>
+                   {currentProduct.name}
+                 </p>
+                   <p>
+                     $ {currentProduct.price}{' '}
+                   </p>
+                   </div>
+                   <br></br>
                     <div className="detail-card-info">
                       <p>{currentProduct.description}</p>
+                      </div>
                       </div>
                   )}        
  </div>
  </div>
-                    
+                    <br></br>
                   <div className="detail-buttons-box">
                   <button className="detail-button" onClick={addToCart}>
                     Add to Cart
@@ -156,9 +174,10 @@ function Detail() {
                   >
                     Remove from Cart
                   </button>
+                  <br></br>
                   </div>
-                  <br></br><br></br>
-
+                    </div>
+                    <br></br><br></br>
             <div className="comment-storage">
             <CommentList comments={currentProduct.comments} 
             />

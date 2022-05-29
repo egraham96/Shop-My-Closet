@@ -2,7 +2,7 @@ import React from 'react';
 
 const CommentList = ({ comments = [] }) => {
     if (!comments.length) {
-        return <p className="comment-p">Be the first to comment!</p>;
+        return <div className="no-comments"><p className="comment-p">Be the first to comment!</p></div>;
     }
 
 
