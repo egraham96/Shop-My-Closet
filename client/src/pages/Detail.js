@@ -101,6 +101,8 @@ function Detail() {
 
   return (
     <>
+    <div className="detail-background">
+      <div className="detail-container-box">
       <div className="detail-container">
         {currentProduct && cart ? (
           <div>
@@ -168,10 +170,8 @@ function Detail() {
                     Add to Cart
                   </button>
                   <br></br>
-                  <button className="detail-button"
-                    disabled={!cart.find((p) => p._id === currentProduct._id)}
-                    onClick={removeFromCart}
-                  >
+                  <button className="detail-button" onClick={removeFromCart}
+                    disabled={!cart.find((p) => p._id === currentProduct._id)}>
                     Remove from Cart
                   </button>
                   <br></br>
@@ -192,6 +192,8 @@ function Detail() {
           ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
+      </div>
+      </div>
       </div>
     </>
   );

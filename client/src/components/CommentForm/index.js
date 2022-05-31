@@ -68,9 +68,9 @@ const CommentForm = ({ productId }) => {
                     </div>
                 </>
             ) : (
-                <div className="comment-login">
+                <div>
                     <br></br>
-                        <div>
+                        <div className="comment-error">
                             <p>
                                 You need to be logged in to add your comment. Please{' '}
                                 <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
