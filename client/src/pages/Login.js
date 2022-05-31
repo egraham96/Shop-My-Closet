@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../components/Modal';
+import ModalLogin from '../components/ModalLogin';
 import { Link } from 'react-router-dom';
 
 function Login(props) {
@@ -7,7 +7,7 @@ function Login(props) {
 
   const renderBack = () => {
     if (!openModal) {
-      return <div id="login-back"><Link to="/signup">← Go to Signup</Link></div>
+      return <div id="login-back"><Link to="/Home">← Go Back</Link></div>
     } else {
       return;
     }
@@ -18,10 +18,9 @@ function Login(props) {
     <div className="login-container">
        {renderBack()}
       <div className="login-box">
-        <h1>Hey, click on button to open the modal</h1>
-        <button className="openModalBtn" onClick={()=>{setOpenModal(true)}}>Open</button>
+        <button className="openModalBtn" onClick={()=>{setOpenModal(true)}}>Login</button>
         <br></br><br></br>
-        {openModal && <Modal closeModal ={setOpenModal} />}
+        {openModal && <ModalLogin closeModal ={setOpenModal} />}
       </div>
       <br></br>
     </div>

@@ -171,7 +171,7 @@ function Detail() {
                   </button>
                   <br></br>
                   <button className="detail-button" onClick={removeFromCart}
-                    disabled={!cart.find((p) => p._id === currentProduct._id)}>
+                    /*disabled={!cart.find((p) => p._id === currentProduct._id)}*/>
                     Remove from Cart
                   </button>
                   <br></br>

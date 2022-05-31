@@ -5,7 +5,7 @@ import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 
-function Modal ({closeModal}){
+function ModalLogin ({closeModal}){
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error }] = useMutation(LOGIN);
   
@@ -87,4 +87,4 @@ function Modal ({closeModal}){
     )
 };
 
-export default Modal;
+export default ModalLogin;
