@@ -1,7 +1,7 @@
-/* eslint-disable no-lone-blocks */
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ModalSignUp from '../components/ModalLogin';
+import ModalSignUp from '../components/ModalSignUp';
 
 function Signup(props) {
   const [openModal,setOpenModal]= useState(false)
